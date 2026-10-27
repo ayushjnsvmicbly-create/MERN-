@@ -9,26 +9,22 @@
     <style>
         * {
             box-sizing: border-box;
-        }
-
-        body {
-            display: grid;
-            min-height: 100vh;
-            margin: 0;
-            padding: 24px;
-            place-items: center;
-            background: linear-gradient(135deg, #dbeafe, #eff6ff);
-            color: #1e293b;
             font-family: Arial, sans-serif;
         }
 
-        main {
-            width: min(100%, 560px);
+        .card {
             padding: 40px;
             border: 1px solid #bfdbfe;
             border-radius: 16px;
             background-color: #ffffff;
             box-shadow: 0 16px 40px rgb(30 64 175 / 12%);
+        }
+
+        #hero {
+            width: min(calc(100% - 32px), 560px);
+            margin: 10vh auto;
+            background: linear-gradient(135deg, #ffffff, #eff6ff);
+            color: #1e293b;
         }
 
         h1 {
@@ -37,22 +33,15 @@
             font-size: clamp(1.75rem, 5vw, 2.5rem);
         }
 
-        p {
-            margin: 0;
-            color: #475569;
-            font-size: 1.125rem;
-            line-height: 1.7;
-        }
-
         @media (max-width: 480px) {
-            main {
+            .card {
                 padding: 28px 24px;
             }
         }
     </style>
 </head>
 <body>
-    <main>
+    <main class="card" id="hero">
         <h1>Welcome to My Website</h1>
         <p>This is my first styled webpage.</p>
     </main>
