@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Register for a course and explore upcoming web development events.">
+    <meta name="theme-color" content="#2563eb">
+    <title>Register | My Website</title>
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            border: 1px solid #666;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Website</h1>
+        <nav aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="register.html" aria-current="page">Register</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Create an Account</h2>
+        <form>
+            <p>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" autocomplete="name" required>
+            </p>
+            <p>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" autocomplete="email" required>
+            </p>
+            <p>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" autocomplete="new-password" required>
+            </p>
+            <p>
+                <label for="date">Date of birth</label>
+                <input type="date" id="date" name="date">
+            </p>
+            <p>
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel">
+            </p>
+
+            <fieldset>
+                <legend>Preferred contact method</legend>
+                <label for="contact-email">
+                    <input type="radio" id="contact-email" name="contact-method" value="email" required>
+                    Email
+                </label>
+                <label for="contact-phone">
+                    <input type="radio" id="contact-phone" name="contact-method" value="phone">
+                    Phone
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Interests</legend>
+                <label for="interest-web">
+                    <input type="checkbox" id="interest-web" name="interests" value="web-development">
+                    Web development
+                </label>
+                <label for="interest-design">
+                    <input type="checkbox" id="interest-design" name="interests" value="design">
+                    Design
+                </label>
+            </fieldset>
+
+            <p>
+                <label for="course">Choose a course</label>
+                <select id="course" name="course" required>
+                    <option value="">Select a course</option>
+                    <option value="B.tech">B.Tech</option>
+                    <option value="BCA">BCA</option>
+                    <option value="M.tech">M.tech</option>
+                </select>
+            </p>
+            <p>
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" cols="40"></textarea>
+            </p>
+            <button type="submit">Submit</button>
+        </form>
+
+        <section aria-labelledby="events-heading">
+            <h2 id="events-heading">Upcoming Events</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">Event</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Location</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>HTML Workshop</td>
+                        <td>November 5, 2026</td>
+                        <td>Room 101</td>
+                    </tr>
+                    <tr>
+                        <td>Web Design Meetup</td>
+                        <td>November 12, 2026</td>
+                        <td>Community Hall</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3">2 upcoming events</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 My Website</p>
+    </footer>
+</body>
+</html>
