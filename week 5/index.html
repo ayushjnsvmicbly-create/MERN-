@@ -4,12 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
     <!-- CSS inside style tag -->
     <style>
         * {
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            margin: 0;
+            background-color: #f1f5f9;
+            color: #334155;
+            font-size: 16px;
+            line-height: 1.7;
         }
 
         .card {
@@ -18,19 +29,29 @@
             border-radius: 16px;
             background-color: #ffffff;
             box-shadow: 0 16px 40px rgb(30 64 175 / 12%);
+            color: #475569;
         }
 
         #hero {
             width: min(calc(100% - 32px), 560px);
             margin: 10vh auto;
             background: linear-gradient(135deg, #ffffff, #eff6ff);
-            color: #1e293b;
+            text-align: center;
         }
 
         h1 {
             margin: 0 0 12px;
             color: #1d4ed8;
             font-size: clamp(1.75rem, 5vw, 2.5rem);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        p {
+            margin: 0;
+            color: #475569;
+            font-size: 1rem;
+            line-height: 1.7;
         }
 
         @media (max-width: 480px) {
