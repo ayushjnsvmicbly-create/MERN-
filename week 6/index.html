@@ -45,7 +45,7 @@
             line-height: 1.6;
         }
 
-        .add-button {
+        .floating-add-button {
             position: fixed;
             right: 24px;
             bottom: 24px;
@@ -65,16 +65,16 @@
             cursor: pointer;
         }
 
-        .add-button:hover {
+        .floating-add-button:hover {
             background: #2448c8;
         }
 
-        .add-button:focus-visible {
+        .floating-add-button:focus-visible {
             outline: 3px solid #172033;
             outline-offset: 3px;
         }
 
-        .cards {
+        .profile-cards {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 24px;
@@ -100,7 +100,7 @@
             --accent: #c94f35;
         }
 
-        .avatar {
+        .profile-card__avatar {
             display: block;
             width: 112px;
             height: 112px;
@@ -111,20 +111,20 @@
             object-position: center 35%;
         }
 
-        .profile-card h2 {
+        .profile-card__name {
             margin: 0 0 6px;
             color: var(--accent);
             font-size: 22px;
         }
 
-        .role {
+        .profile-card__role {
             margin: 0 0 14px;
             color: #586174;
             font-size: 14px;
             font-weight: 700;
         }
 
-        .bio {
+        .profile-card__bio {
             height: 72px;
             margin: 0;
             overflow: auto;
@@ -146,12 +146,12 @@
                 font-size: 28px;
             }
 
-            .add-button {
+            .floating-add-button {
                 right: 18px;
                 bottom: 18px;
             }
 
-            .cards {
+            .profile-cards {
                 grid-template-columns: 1fr;
                 gap: 18px;
             }
@@ -165,23 +165,23 @@
     </header>
 
     <main>
-        <section class="cards" aria-label="Profile card colour versions">
+        <section class="profile-cards" aria-label="Profile card colour versions">
             <article class="profile-card profile-card--blue">
-                <img class="avatar" src="../week%203/ayush-pic.png" alt="Portrait of Ayush">
-                <h2>Ayush</h2>
-                <p class="role">Web Development Student</p>
-                <p class="bio">I am learning to build creative, accessible websites with HTML, CSS, and JavaScript. I enjoy exploring new design ideas, practicing my coding skills, and making pages that are easy for everyone to use. My goal is to keep learning and create useful projects that look great on every screen.</p>
+                <img class="profile-card__avatar" src="../week%203/ayush-pic.png" alt="Portrait of Ayush">
+                <h2 class="profile-card__name">Ayush</h2>
+                <p class="profile-card__role">Web Development Student</p>
+                <p class="profile-card__bio">I am learning to build creative, accessible websites with HTML, CSS, and JavaScript. I enjoy exploring new design ideas, practicing my coding skills, and making pages that are easy for everyone to use. My goal is to keep learning and create useful projects that look great on every screen.</p>
             </article>
 
             <article class="profile-card profile-card--coral">
-                <img class="avatar" src="../week%203/ayush-pic.png" alt="Portrait of Ayush">
-                <h2>Ayush</h2>
-                <p class="role">Web Development Student</p>
-                <p class="bio">I am learning to build creative, accessible websites with HTML, CSS, and JavaScript. I enjoy exploring new design ideas, practicing my coding skills, and making pages that are easy for everyone to use. My goal is to keep learning and create useful projects that look great on every screen.</p>
+                <img class="profile-card__avatar" src="../week%203/ayush-pic.png" alt="Portrait of Ayush">
+                <h2 class="profile-card__name">Ayush</h2>
+                <p class="profile-card__role">Web Development Student</p>
+                <p class="profile-card__bio">I am learning to build creative, accessible websites with HTML, CSS, and JavaScript. I enjoy exploring new design ideas, practicing my coding skills, and making pages that are easy for everyone to use. My goal is to keep learning and create useful projects that look great on every screen.</p>
             </article>
         </section>
     </main>
 
-    <button class="add-button" type="button" aria-label="Add profile">+</button>
+    <button class="floating-add-button" type="button" aria-label="Add profile">+</button>
 </body>
 </html>
