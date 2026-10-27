@@ -19,22 +19,38 @@
     </header>
 
     <main>
-        <h2>Home Page</h2>
-        <p>This is my first website.</p>
-        <img src="./ayush-pic.png" alt="My picture"width="200" height="200">
+        <section aria-labelledby="home-heading">
+            <article>
+                <h2 id="home-heading">Home Page</h2>
+                <p>This is my first website.</p>
+                <img src="./ayush-pic.png" alt="My picture" width="200" height="200">
+            </article>
+        </section>
 
-        <h2>My Courses</h2>
-        <ul>
-            <li>Web Development
+        <section aria-labelledby="courses-heading">
+            <article>
+                <h2 id="courses-heading">My Courses</h2>
                 <ul>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>JavaScript</li>
+                    <li>Web Development
+                        <ul>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                        </ul>
+                    </li>
+                    <li>Database Management</li>
                 </ul>
-            </li>
-            <li>Database Management</li>
-        </ul>
+            </article>
+            <aside>
+                <h2>Learning Note</h2>
+                <p>These courses cover web development and database fundamentals.</p>
+            </aside>
+        </section>
     </main>
+
+    <footer>
+        <p>&copy; 2026 My Website</p>
+    </footer>
 
 </body>
 </html>
