@@ -12,7 +12,7 @@
         body {
             min-height: 100vh;
             margin: 0;
-            padding: 48px 20px;
+            padding: 0 20px 48px;
             background: #f3f6fb;
             color: #172033;
             font-family: Arial, Helvetica, sans-serif;
@@ -23,20 +23,55 @@
             margin: 0 auto;
         }
 
-        header {
+        .top-bar {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            padding: 18px 20px;
             margin-bottom: 32px;
+            border-bottom: 1px solid #dfe5ef;
+            background: #fff;
             text-align: center;
         }
 
-        h1 {
+        .top-bar h1 {
             margin: 0 0 10px;
             font-size: clamp(30px, 5vw, 42px);
         }
 
-        header p {
+        .top-bar p {
             margin: 0;
             color: #586174;
             line-height: 1.6;
+        }
+
+        .add-button {
+            position: fixed;
+            right: 24px;
+            bottom: 24px;
+            z-index: 20;
+            display: grid;
+            width: 56px;
+            height: 56px;
+            place-items: center;
+            border: 0;
+            border-radius: 50%;
+            background: #315bea;
+            box-shadow: 0 6px 18px rgb(23 32 51 / 25%);
+            color: #fff;
+            font: inherit;
+            font-size: 32px;
+            line-height: 1;
+            cursor: pointer;
+        }
+
+        .add-button:hover {
+            background: #2448c8;
+        }
+
+        .add-button:focus-visible {
+            outline: 3px solid #172033;
+            outline-offset: 3px;
         }
 
         .cards {
@@ -100,7 +135,20 @@
 
         @media (max-width: 600px) {
             body {
-                padding: 32px 16px;
+                padding: 0 16px 32px;
+            }
+
+            .top-bar {
+                padding: 16px 12px;
+            }
+
+            .top-bar h1 {
+                font-size: 28px;
+            }
+
+            .add-button {
+                right: 18px;
+                bottom: 18px;
             }
 
             .cards {
@@ -111,12 +159,12 @@
     </style>
 </head>
 <body>
-    <main>
-        <header>
-            <h1>Profile Cards</h1>
-            <p>One card design, shown in two different colour styles.</p>
-        </header>
+    <header class="top-bar">
+        <h1>Profile Cards</h1>
+        <p>One card design, shown in two different colour styles.</p>
+    </header>
 
+    <main>
         <section class="cards" aria-label="Profile card colour versions">
             <article class="profile-card profile-card--blue">
                 <img class="avatar" src="../week%203/ayush-pic.png" alt="Portrait of Ayush">
@@ -133,5 +181,7 @@
             </article>
         </section>
     </main>
+
+    <button class="add-button" type="button" aria-label="Add profile">+</button>
 </body>
 </html>
