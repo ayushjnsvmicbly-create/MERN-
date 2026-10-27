@@ -10,53 +10,77 @@
 
     <!-- CSS inside style tag -->
     <style>
+        :root {
+            --color-page: #f1f5f9;
+            --color-text: #334155;
+            --color-muted: #475569;
+            --color-heading: #1d4ed8;
+            --color-border: #bfdbfe;
+            --color-card-start: #ffffff;
+            --color-card-end: #eff6ff;
+            --color-shadow: rgb(30 64 175 / 12%);
+
+            --space-0: 0;
+            --space-1: 8px;
+            --space-2: 12px;
+            --space-3: 16px;
+            --space-4: 24px;
+            --space-5: 28px;
+            --space-6: 40px;
+            --space-page-inset: 32px;
+            --space-section: 10vh;
+            --space-border: 1px;
+            --radius-card: 16px;
+            --width-card: 560px;
+        }
+
         * {
             box-sizing: border-box;
             font-family: "Poppins", sans-serif;
         }
 
         body {
-            margin: 0;
-            background-color: #f1f5f9;
-            color: #334155;
+            margin: var(--space-0);
+            background-color: var(--color-page);
+            color: var(--color-text);
             font-size: 16px;
             line-height: 1.7;
         }
 
         .card {
-            padding: 40px;
-            border: 1px solid #bfdbfe;
-            border-radius: 16px;
-            background-color: #ffffff;
-            box-shadow: 0 16px 40px rgb(30 64 175 / 12%);
-            color: #475569;
+            padding: var(--space-6);
+            border: var(--space-border) solid var(--color-border);
+            border-radius: var(--radius-card);
+            background-color: var(--color-card-start);
+            box-shadow: var(--space-0) var(--space-3) var(--space-6) var(--color-shadow);
+            color: var(--color-muted);
         }
 
         #hero {
-            width: min(calc(100% - 32px), 560px);
-            margin: 10vh auto;
-            background: linear-gradient(135deg, #ffffff, #eff6ff);
+            width: min(calc(100% - var(--space-page-inset)), var(--width-card));
+            margin: var(--space-section) auto;
+            background: linear-gradient(135deg, var(--color-card-start), var(--color-card-end));
             text-align: center;
         }
 
         h1 {
-            margin: 0 0 12px;
-            color: #1d4ed8;
+            margin: var(--space-0) var(--space-0) var(--space-2);
+            color: var(--color-heading);
             font-size: clamp(1.75rem, 5vw, 2.5rem);
             font-weight: 700;
             line-height: 1.2;
         }
 
         p {
-            margin: 0;
-            color: #475569;
+            margin: var(--space-0);
+            color: var(--color-muted);
             font-size: 1rem;
             line-height: 1.7;
         }
 
         @media (max-width: 480px) {
             .card {
-                padding: 28px 24px;
+                padding: var(--space-5) var(--space-4);
             }
         }
     </style>
