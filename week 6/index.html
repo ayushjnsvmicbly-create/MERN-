@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Box Model Lab</title>
+    <title>Profile Cards</title>
     <style>
         * {
             box-sizing: border-box;
         }
 
         body {
+            min-height: 100vh;
             margin: 0;
-            padding: 32px 20px;
+            padding: 48px 20px;
             background: #f3f6fb;
             color: #172033;
             font-family: Arial, Helvetica, sans-serif;
@@ -22,17 +23,9 @@
             margin: 0 auto;
         }
 
-        .intro {
-            margin-bottom: 24px;
-        }
-
-        .eyebrow {
-            margin: 0 0 8px;
-            color: #5265d7;
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
+        header {
+            margin-bottom: 32px;
+            text-align: center;
         }
 
         h1 {
@@ -40,229 +33,102 @@
             font-size: clamp(30px, 5vw, 42px);
         }
 
-        .intro p:last-child {
-            max-width: 620px;
+        header p {
             margin: 0;
             color: #586174;
             line-height: 1.6;
         }
 
-        .lab {
+        .cards {
             display: grid;
-            grid-template-columns: minmax(0, 1fr) minmax(260px, 0.85fr);
+            grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 24px;
-            align-items: start;
         }
 
-        .panel {
-            padding: 22px;
-            border: 1px solid #dfe5ef;
-            border-radius: 16px;
-            background: #fff;
-            box-shadow: 0 12px 30px rgb(25 42 70 / 6%);
-        }
-
-        h2 {
-            margin: 0 0 18px;
-            font-size: 18px;
-        }
-
-        .stage {
-            display: flex;
-            min-height: 330px;
-            align-items: center;
-            justify-content: center;
-            overflow: auto;
-            border-radius: 10px;
-            background-color: #f8fafc;
-            background-image: radial-gradient(#d8deea 1px, transparent 1px);
-            background-size: 18px 18px;
-        }
-
-        .margin-box {
-            position: relative;
-            display: grid;
-            width: 310px;
-            height: 230px;
-            flex: 0 0 auto;
-            place-items: center;
-            background: #fff1bd;
-            outline: 1px dashed #bb8b13;
-        }
-
-        .margin-label {
-            position: absolute;
-            top: 8px;
-            left: 10px;
-            color: #745300;
-            font-size: 12px;
-            font-weight: 700;
-        }
-
-        .border-box {
-            display: grid;
-            width: 250px;
-            height: 170px;
-            place-items: center;
-            border: 10px solid #ee8b45;
-            background: #dceeff;
-        }
-
-        .padding-box {
-            display: grid;
-            width: 100%;
-            height: 100%;
-            padding: 20px;
-            place-items: center;
-            background: #c9f0df;
-        }
-
-        .content-box {
-            display: grid;
-            width: 100%;
-            min-height: 70px;
-            place-items: center;
-            border-radius: 8px;
-            background: #fff;
-            color: #172033;
+        .profile-card {
+            padding: 28px 24px;
+            border: 2px solid var(--card-border);
+            border-radius: 20px;
+            background: var(--card-background);
             text-align: center;
         }
 
-        .content-box strong {
+        .profile-card--blue {
+            --card-border: #5273e8;
+            --card-background: #eef2ff;
+            --accent: #315bea;
+        }
+
+        .profile-card--coral {
+            --card-border: #e88769;
+            --card-background: #fff1eb;
+            --accent: #c94f35;
+        }
+
+        .avatar {
             display: block;
-            font-size: 15px;
+            width: 112px;
+            height: 112px;
+            margin: 0 auto 18px;
+            border: 4px solid var(--accent);
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center 35%;
         }
 
-        .content-box span {
-            color: #647084;
-            font-size: 12px;
+        .profile-card h2 {
+            margin: 0 0 6px;
+            color: var(--accent);
+            font-size: 22px;
         }
 
-        .key {
-            display: grid;
-            gap: 12px;
-            margin: 0;
-            padding: 0;
-            list-style: none;
-        }
-
-        .key li {
-            display: grid;
-            grid-template-columns: 14px 1fr;
-            gap: 10px;
-            align-items: start;
+        .role {
+            margin: 0 0 14px;
             color: #586174;
             font-size: 14px;
-            line-height: 1.45;
+            font-weight: 700;
         }
 
-        .swatch {
-            width: 14px;
-            height: 14px;
-            margin-top: 2px;
-            border-radius: 4px;
-        }
-
-        .key strong {
-            color: #172033;
-        }
-
-        .css-card {
-            margin-top: 20px;
-            padding: 16px;
-            border-radius: 10px;
-            background: #172033;
-            color: #e8edfa;
-        }
-
-        .css-card h2 {
-            margin-bottom: 10px;
-            color: #fff;
-            font-size: 14px;
-        }
-
-        pre {
+        .bio {
             margin: 0;
-            overflow-x: auto;
-            font: 13px/1.7 Consolas, "Courier New", monospace;
+            color: #414b5e;
+            font-size: 14px;
+            line-height: 1.6;
         }
 
-        .tip {
-            margin: 14px 0 0;
-            color: #586174;
-            font-size: 13px;
-            line-height: 1.5;
-        }
-
-        @media (max-width: 680px) {
+        @media (max-width: 600px) {
             body {
-                padding: 24px 14px;
+                padding: 32px 16px;
             }
 
-            .lab {
+            .cards {
                 grid-template-columns: 1fr;
-            }
-
-            .panel {
-                padding: 18px;
+                gap: 18px;
             }
         }
     </style>
 </head>
 <body>
     <main>
-        <header class="intro">
-            <p class="eyebrow">CSS practice · Week 6</p>
-            <h1>The box model</h1>
-            <p>Every element is a rectangle. Adjust the padding, border, and margin in the example below, and use the color key to see what each layer does.</p>
+        <header>
+            <h1>Profile Cards</h1>
+            <p>One card design, shown in two different colour styles.</p>
         </header>
 
-        <section class="lab" aria-label="Box model demonstration">
-            <div class="panel">
-                <h2>Explore the layers</h2>
-                <div class="stage">
-                    <div class="margin-box">
-                        <span class="margin-label">MARGIN · 30px</span>
-                        <div class="border-box">
-                            <div class="padding-box">
-                                <div class="content-box">
-                                    <div>
-                                        <strong>CONTENT</strong>
-                                        <span>width: 100% inside padding</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <p class="tip">The orange border and green padding are included in the element’s declared size because <code>box-sizing</code> is <code>border-box</code>.</p>
-            </div>
+        <section class="cards" aria-label="Profile card colour versions">
+            <article class="profile-card profile-card--blue">
+                <img class="avatar" src="../week%203/ayush-pic.png" alt="Portrait of Ayush">
+                <h2>Ayush</h2>
+                <p class="role">Web Development Student</p>
+                <p class="bio">Learning to build creative, accessible websites with HTML and CSS.</p>
+            </article>
 
-            <aside>
-                <div class="panel">
-                    <h2>Box model key</h2>
-                    <ul class="key">
-                        <li><span class="swatch" style="background:#fff1bd"></span><span><strong>Margin</strong> — 30px of transparent space outside the border.</span></li>
-                        <li><span class="swatch" style="background:#ee8b45"></span><span><strong>Border</strong> — 10px edge around the element.</span></li>
-                        <li><span class="swatch" style="background:#c9f0df"></span><span><strong>Padding</strong> — 20px of space between the border and content.</span></li>
-                        <li><span class="swatch" style="background:#fff;border:1px solid #dfe5ef"></span><span><strong>Content</strong> — the text or other element content.</span></li>
-                    </ul>
-                </div>
-
-                <div class="css-card">
-                    <h2>CSS in this example</h2>
-                    <pre><code>* {
-  box-sizing: border-box;
-}
-
-.example {
-  width: 250px;
-  padding: 20px;
-  border: 10px solid coral;
-  margin: 30px;
-}</code></pre>
-                </div>
-            </aside>
+            <article class="profile-card profile-card--coral">
+                <img class="avatar" src="../week%203/ayush-pic.png" alt="Portrait of Ayush">
+                <h2>Ayush</h2>
+                <p class="role">Web Development Student</p>
+                <p class="bio">Learning to build creative, accessible websites with HTML and CSS.</p>
+            </article>
         </section>
     </main>
 </body>
