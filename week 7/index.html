@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flex Navbar</title>
+    <title>Flexbox Navbar and Banner</title>
     <style>
         * {
             box-sizing: border-box;
@@ -68,16 +68,23 @@
             background: #2448c8;
         }
 
-        main {
-            padding: 72px 24px;
+        .banner {
+            display: flex;
+            min-height: 70vh;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            padding: 48px 24px;
+            background: #eef2ff;
             text-align: center;
         }
 
-        main h1 {
-            margin: 0 0 12px;
+        .banner h1 {
+            margin: 0;
         }
 
-        main p {
+        .banner p {
             margin: 0;
             color: #586174;
         }
@@ -117,9 +124,9 @@
         </nav>
     </header>
 
-    <main id="home">
+    <main class="banner" id="home">
         <h1>Welcome to BrightSite</h1>
-        <p>This navbar uses Flexbox to position the logo on the left and navigation on the right.</p>
+        <p>Flexbox centers this banner content vertically and horizontally.</p>
     </main>
 </body>
 </html>
