@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flexbox Navbar and Banner</title>
+    <title>BrightSite | Build for the Web</title>
     <style>
         * {
             box-sizing: border-box;
@@ -15,18 +15,22 @@
             font-family: Arial, Helvetica, sans-serif;
         }
 
+        .site-header {
+            background: linear-gradient(135deg, #172b68, #315bea);
+            color: #fff;
+        }
+
         .navbar {
             display: flex;
             align-items: center;
             justify-content: space-between;
             gap: 24px;
             padding: 18px 8%;
-            background: #fff;
-            box-shadow: 0 2px 12px rgb(23 32 51 / 10%);
+            border-bottom: 1px solid rgb(255 255 255 / 20%);
         }
 
         .navbar__logo {
-            color: #315bea;
+            color: #fff;
             font-size: 24px;
             font-weight: 700;
             text-decoration: none;
@@ -45,48 +49,68 @@
         }
 
         .navbar__links a {
-            color: #414b5e;
+            color: #e4eaff;
             text-decoration: none;
         }
 
         .navbar__links a:hover {
-            color: #315bea;
+            color: #fff;
         }
 
         .navbar__button {
+            display: inline-block;
             padding: 10px 16px;
-            border: 0;
+            border: 1px solid rgb(255 255 255 / 55%);
             border-radius: 6px;
-            background: #315bea;
-            color: #fff;
-            font: inherit;
+            background: #fff;
+            color: #2448c8;
             font-weight: 700;
-            cursor: pointer;
+            text-decoration: none;
         }
 
         .navbar__button:hover {
-            background: #2448c8;
+            background: #e4eaff;
         }
 
         .banner {
             display: flex;
-            min-height: 70vh;
+            min-height: 65vh;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            gap: 12px;
-            padding: 48px 24px;
-            background: #eef2ff;
+            gap: 18px;
+            padding: 64px 24px;
             text-align: center;
         }
 
         .banner h1 {
+            max-width: 760px;
             margin: 0;
+            font-size: clamp(40px, 7vw, 64px);
+            line-height: 1.1;
         }
 
         .banner p {
+            max-width: 600px;
             margin: 0;
-            color: #586174;
+            color: #e4eaff;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .banner__button {
+            margin-top: 8px;
+            padding: 13px 20px;
+            border-radius: 6px;
+            background: #fff;
+            color: #2448c8;
+            font: inherit;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .banner__button:hover {
+            background: #e4eaff;
         }
 
         .cards {
@@ -138,27 +162,26 @@
     </style>
 </head>
 <body>
-    <header>
+    <header class="site-header">
         <nav class="navbar" aria-label="Main navigation">
-            <a class="navbar__logo" href="#" aria-label="BrightSite home">BrightSite</a>
+            <a class="navbar__logo" href="#home" aria-label="BrightSite home">BrightSite</a>
             <div class="navbar__right">
                 <div class="navbar__links">
                     <a href="#home">Home</a>
-                    <a href="#about">About</a>
                     <a href="#services">Services</a>
                 </div>
-                <button class="navbar__button" type="button">Contact</button>
+                <a class="navbar__button" href="#services">Get started</a>
             </div>
         </nav>
+        <section class="banner" id="home">
+            <h1>Build something great for the web</h1>
+            <p>BrightSite helps you turn your ideas into clear, engaging digital experiences.</p>
+            <a class="banner__button" href="#services">Explore what we do</a>
+        </section>
     </header>
 
     <main>
-        <section class="banner" id="home">
-            <h1>Welcome to BrightSite</h1>
-            <p>Flexbox centers this banner content vertically and horizontally.</p>
-        </section>
-
-        <section class="cards" aria-label="Featured topics">
+        <section class="cards" id="services" aria-label="Our services">
             <article class="card">
                 <h2>Design</h2>
                 <p>Explore thoughtful layouts and visual styles for the web.</p>
