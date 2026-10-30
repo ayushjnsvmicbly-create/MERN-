@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Navbar</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            color: #172033;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            padding: 18px 8%;
+            background: #fff;
+            box-shadow: 0 2px 12px rgb(23 32 51 / 10%);
+        }
+
+        .navbar__logo {
+            color: #315bea;
+            font-size: 24px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .navbar__right {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .navbar__links {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .navbar__links a {
+            color: #414b5e;
+            text-decoration: none;
+        }
+
+        .navbar__links a:hover {
+            color: #315bea;
+        }
+
+        .navbar__button {
+            padding: 10px 16px;
+            border: 0;
+            border-radius: 6px;
+            background: #315bea;
+            color: #fff;
+            font: inherit;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .navbar__button:hover {
+            background: #2448c8;
+        }
+
+        main {
+            padding: 72px 24px;
+            text-align: center;
+        }
+
+        main h1 {
+            margin: 0 0 12px;
+        }
+
+        main p {
+            margin: 0;
+            color: #586174;
+        }
+
+        @media (max-width: 600px) {
+            .navbar {
+                align-items: flex-start;
+                flex-direction: column;
+                padding: 18px 24px;
+            }
+
+            .navbar__right {
+                width: 100%;
+                justify-content: space-between;
+                gap: 16px;
+            }
+
+            .navbar__links {
+                flex-wrap: wrap;
+                gap: 12px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar" aria-label="Main navigation">
+            <a class="navbar__logo" href="#" aria-label="BrightSite home">BrightSite</a>
+            <div class="navbar__right">
+                <div class="navbar__links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#services">Services</a>
+                </div>
+                <button class="navbar__button" type="button">Contact</button>
+            </div>
+        </nav>
+    </header>
+
+    <main id="home">
+        <h1>Welcome to BrightSite</h1>
+        <p>This navbar uses Flexbox to position the logo on the left and navigation on the right.</p>
+    </main>
+</body>
+</html>
