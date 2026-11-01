@@ -16,9 +16,11 @@
         }
 
         .grid-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
             padding: 24px;
             background-color: #dbeafe;
-            text-align: center;
         }
 
         .head {
@@ -41,11 +43,21 @@
 <body>
     <div class="grid">
         <header class="grid-item head">
+            <span aria-hidden="true">⌂</span>
             <h1>CSS Grid</h1>
         </header>
-        <aside class="grid-item side">Side</aside>
-        <main class="grid-item main">Main content</main>
-        <footer class="grid-item foot">Footer</footer>
+        <aside class="grid-item side">
+            <span aria-hidden="true">☰</span>
+            <span>Side</span>
+        </aside>
+        <main class="grid-item main">
+            <span aria-hidden="true">▣</span>
+            <span>Main content</span>
+        </main>
+        <footer class="grid-item foot">
+            <span aria-hidden="true">©</span>
+            <span>Footer</span>
+        </footer>
     </div>
 </body>
 </html>
