@@ -7,7 +7,11 @@
     <style>
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-template-columns: 1fr 3fr;
+            grid-template-areas:
+                "head head"
+                "side main"
+                "foot foot";
             gap: 16px;
         }
 
@@ -16,19 +20,32 @@
             background-color: #dbeafe;
             text-align: center;
         }
+
+        .head {
+            grid-area: head;
+        }
+
+        .side {
+            grid-area: side;
+        }
+
+        .main {
+            grid-area: main;
+        }
+
+        .foot {
+            grid-area: foot;
+        }
     </style>
 </head>
 <body>
-    <main>
-        <h1>CSS Grid</h1>
-        <div class="grid">
-            <div class="grid-item">One</div>
-            <div class="grid-item">Two</div>
-            <div class="grid-item">Three</div>
-            <div class="grid-item">Four</div>
-            <div class="grid-item">Five</div>
-            <div class="grid-item">Six</div>
-        </div>
-    </main>
+    <div class="grid">
+        <header class="grid-item head">
+            <h1>CSS Grid</h1>
+        </header>
+        <aside class="grid-item side">Side</aside>
+        <main class="grid-item main">Main content</main>
+        <footer class="grid-item foot">Footer</footer>
+    </div>
 </body>
 </html>
