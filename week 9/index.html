@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Layout</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 16px;
+            font-family: Arial, sans-serif;
+            line-height: 1.5;
+            color: #1f2937;
+            background-color: #f3f4f6;
+        }
+
+        .page {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header,
+        .card {
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #ffffff;
+        }
+
+        .header {
+            color: #ffffff;
+            background-color: #1d4ed8;
+        }
+
+        .header h1,
+        .card h2 {
+            margin-top: 0;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+        @media (min-width: 768px) {
+            body {
+                padding: 24px;
+            }
+
+            .cards {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .page {
+                grid-template-columns: 1fr 3fr;
+            }
+
+            .header {
+                grid-column: 1 / -1;
+            }
+
+            .cards {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="page">
+        <header class="header">
+            <h1>Responsive Layout</h1>
+            <p>This page starts with a mobile layout and adapts to wider screens.</p>
+        </header>
+
+        <aside class="card">
+            <h2>About</h2>
+            <p>On a small screen, content is arranged in one column for easy reading.</p>
+        </aside>
+
+        <section class="cards" aria-label="Featured topics">
+            <article class="card">
+                <h2>Topic One</h2>
+                <p>Cards stack on mobile and form columns as more space becomes available.</p>
+            </article>
+            <article class="card">
+                <h2>Topic Two</h2>
+                <p>At 768px, the cards use two columns.</p>
+            </article>
+            <article class="card">
+                <h2>Topic Three</h2>
+                <p>At 1024px, the page gains a sidebar and the cards use three columns.</p>
+            </article>
+        </section>
+    </main>
+</body>
+</html>
